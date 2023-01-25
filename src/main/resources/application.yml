@@ -1,0 +1,37 @@
+spring:
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+
+  flyway:
+    user: username
+    password: password
+    url: jdbc:postgresql://localhost:5432/source-db
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+  batch:
+    job:
+      enabled: true
+    jdbc:
+      initialize-schema: always
+  shell:
+    interactive:
+      enabled: true
+
+  mongodb:
+    embedded:
+      version: 3.5.5
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/source-db
+    username: username
+    password: password
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
